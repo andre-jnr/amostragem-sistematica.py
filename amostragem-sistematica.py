@@ -1,21 +1,21 @@
-# amostra simples - probabilidade e estatitica
-from math import floor
-
 pop = int(input('População: '))
 amostra = int(input('Amostra: '))
-cal = pop / amostra
-ini = floor(cal) * floor(cal)
-while ini > cal or ini <= 0:
-    ini = int(input(f'Digite um número entre 1 e {floor(cal)}: '))
-    if ini > cal:
-        print('Você digitou um número muito alto!')
-    if ini == 0:
+calculo = pop / amostra
+amostragem = round(calculo)
+n_inicial = amostragem * amostragem
+contador = 0
+
+while n_inicial > amostragem or n_inicial <= 0:
+    n_inicial = int(input(f'Digite um número entre 1 e {amostragem}: '))
+    if n_inicial > amostragem:
+        print('Você digitou um número muito alto')
+    if n_inicial == 0:
         print('Você digitou um valor nulo!')
-lista = [ini]
-c = 0
-while c < amostra - 1:
-    v = ini + floor(cal)
-    lista.append(v)
-    ini += floor(cal)
-    c += 1
-print(lista)
+amostras = [n_inicial]
+
+while contador < amostra - 1:
+    n_amostra = n_inicial + amostragem
+    amostras.append(n_amostra)
+    n_inicial += amostragem
+    contador += 1
+print(amostras)
