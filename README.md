@@ -20,10 +20,7 @@
   selecionar os respondentes.
 </p>
 <p>
-  Observe que a população já se encontra organizada, e precisamos apenas de 800
-  amostras. Para isso deveriamos dividir a população pela quantidade de amostra
-  desejada, o resultado desse calculo deverá ser o valor inicial da contagem. As
-  amostras são sequenciais do número incial escolhido.
+  Observe que a população já se encontra organizada, e precisamos apenas de 800 amostras. Para isso deveriamos dividir a população pela amostra desejada(25.037 ÷ 800), o número escolhido para ser a contagem inical, deverá ser entre 1 e o resultado do cálculo da amostra(31). As amostras são o número inicial escolhido sequenciais do calculo(31).
 </p>
 
 <p>
@@ -34,16 +31,15 @@
 </p>
 <br />
 <p>
-  É criado uma variável para armazenar o calculo, em seguida arredodamos esse
-  calculo para ser a amostragem necessária para começamos a coletar as amostras
+  É criado uma variável para armazenar o cálculo, em seguida arredondamos para ser a amostragem necessária para começarmos a coletar as amostras.
 </p>
 <p align="center">
   <img src="img/calculo_amostragem.png" alt="calculos da amostragem" />
 </p>
 <br />
 <p>
-  Em seguida damos qualquer valor para o número inicial, para podemos criar o
-  nosso loop (esse loop será utilizado para controlamos o fluxo de respostas do
+  Em seguida damos qualquer valor para o número inicial, para podermos criar o
+  nosso loop (esse loop será utilizado para controlarmos o fluxo de respostas do
   usuario). Também atribuimos o valor inicial da contagem, que deverá chegar até
   800 (no exemplo escolhido)
 </p>
@@ -53,7 +49,7 @@
 <br />
 <p>
   Foi criado um loop para o usuario escolher um número de 1 até 31(que foi
-  definido pelo calculo e arredodado). Enquando o número incial for maior que a
+  definido pelo calculo e arredondado). Enquando o número incial for maior que a
   amostragem <strong>ou</strong> for menor ou igual a zero, repita o processo.
 </p>
 <p align="center">
@@ -64,7 +60,7 @@
 </p>
 <br />
 <p>
-  Também foi implementado dois fluxo de alertas, caso o usuario escolha um
+  Também foi implementado dois fluxos de alertas, caso o usuario escolha um
   número muito alto, ou muito baixo
 </p>
 <p align="center">
@@ -75,7 +71,7 @@
 </p>
 <br />
 <p>
-  Fora do loop, foi criado uma lista que recebera o número inicial escolhido
+  Fora do loop, foi criado uma lista que receberá o número inicial escolhido
   pelo usuario.
 </p>
 <p align="center">
@@ -83,25 +79,19 @@
 </p>
 <br />
 <p>
-  Depois passa para o loop que coletará as amostras, ele continuará repitindo
-  até que a contagem for menor que a amostra (escolhida pelo usuario, que como
-  exemplo, seria 800), em seguida criamos uma variavel que receberá a amostragem
-  da vez +(mais) o número inicial. Essa amostra será jogada na lista de
-  amostras.
+  Depois passa para o loop que coletará as amostras, ele continuará repetindo até que a contagem seja menor que a amostra (escolhida pelo usuario, que como exemplo, seria 800), em seguida criamos uma variavel que receberá a amostragem da vez +(mais) o número inicial. Essa amostra será jogada na lista de amostras.
 </p>
 <p align="center">
   <img src="img/loop_amostra.png" alt="loop que coleta as ammostras" />
 </p>
 <p>
-  Não podemos esquecer de ir aumentando a contagem no final do processo, para
-  evitar um loop infinito
+  Não podemos esquecer de ir aumentando a contagem no final do processo, para evitar um loop infinito
 </p>
 <p align="center">
   <img src="img/contador.png" alt="contador do loop" />
 </p>
 <p>
-  No fim, fora do loop, apenas exibimos a lista com todas as amostras escolhido
-  pelo algoritmo seguindo o conceito de amostra sistematica.
+  No fim, fora do loop, apenas exibimos a lista com todas as amostras escolhidas pelo algoritmo seguindo o conceito de amostra sistematica.
 </p>
 <p align="center">
   <img src="img/print_amostras.png" alt="lista de amostras" />
