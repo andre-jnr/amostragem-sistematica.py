@@ -5,9 +5,7 @@
   executa uma amostragem sistemática
 </p>
 <p>
-  A amostra sistemática é utilizada quando os elementos da população a ser
-  estudados já se encontram ordenados e, em seguida, são sorteados de acordo com
-  uma certa periodicidade
+  A amostra sistematica é utilizada quando os elementos da população a ser estudados já se encontram ordenados e, em seguida, são sorteados de acordo com uma certa periodicidade.
 </p>
 
 <h2>Como o código funciona</h2>
