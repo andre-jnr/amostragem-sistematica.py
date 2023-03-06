@@ -8,6 +8,8 @@
   A amostra sistematica é utilizada quando os elementos da população a ser estudados já se encontram ordenados e, em seguida, são sorteados de acordo com uma certa periodicidade.
 </p>
 
+Mais estudos sobre python: https://github.com/andre-jnr/estudos-python
+
 <h2>Como o código funciona</h2>
 <p><small>A explicação está em cima do código.</small></p>
 <p>
