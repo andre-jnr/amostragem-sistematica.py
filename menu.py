@@ -1,8 +1,3 @@
-from amostragens import sistematica as sis
-from amostragens import casualSimples as cs
-from amostragens import proporcionalEstratificada as pe
-
-
 def menuPrincipal():
     while True:
         print('[1] - Amostragem simples casual')
@@ -45,22 +40,3 @@ def acoes(opcao):
 
             grupos = pe.coletarAmostra(qtde_grupos, tamanho_amostra)
             pe.mostrarTabela(grupos)
-
-
-opcao = menuPrincipal()
-acoes(opcao)
-
-while True:
-    print('')
-    print('[1] - Sim')
-    print('[2] - Não')
-    opcao = int(input('Deseja visualizar outras amostragens: '))
-    if opcao == 1:
-        opcao = menuPrincipal()
-        acoes(opcao)
-    elif opcao == 2:
-        print('Programa encerrado!')
-        break
-    else:
-        print('')
-        print('Opção invalida')

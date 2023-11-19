@@ -4,7 +4,7 @@ def criarAmostragem(populacao, qtde_amostras):
 
 def lerValorInicial(amostragem):
     valor_inicial = amostragem * amostragem
-    print("Digite um número para ser o número inicial")
+    print('Digite um número para ser o número inicial')
 
     while (valor_inicial > amostragem) or (valor_inicial <= 0):
         valor_inicial = int(
@@ -19,7 +19,7 @@ def lerValorInicial(amostragem):
 
 def coletarAmostra(valor_inicial, populacao, amostragem):
     amostras = list()
-    for amostra in range(valor_inicial, populacao, amostragem):
+    for amostra in range(valor_inicial, populacao + 1, amostragem):
         amostras.append(amostra)
 
     return amostras
@@ -27,4 +27,4 @@ def coletarAmostra(valor_inicial, populacao, amostragem):
 
 def imprimirAmostra(amostras):
     for amostra in amostras:
-        print(amostra, end=" ")
+        print(amostra, end=' ')
