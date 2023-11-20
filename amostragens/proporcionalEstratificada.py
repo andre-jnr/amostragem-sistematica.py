@@ -11,12 +11,13 @@ def somarValores(chave, grupos):
 
 
 def menorValor(chave, grupos):
-    menorValor = next(iter(grupos.values()))
+    menorValor = float('inf')
     idValor = ''
     resultado = dict()
 
     for nome_grupo, dicionario_interno in grupos.items():
-        if (dicionario_interno[chave] < menorValor) and (dicionario_interno[chave] != 0):
+        valor_atual = dicionario_interno[chave]
+        if (valor_atual < menorValor) and (valor_atual != 0):
             menorValor = dicionario_interno[chave]
             idValor = nome_grupo
 
