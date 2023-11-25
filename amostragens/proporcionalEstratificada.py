@@ -26,9 +26,20 @@ def menorValor(chave, grupos):
 
 
 def coletarGrupos(qtde_grupos):
+    try:
+        from rich.table import Table
+        limite_caracteres = int(100)
+    except ModuleNotFoundError:
+        print('Instale a biblioteca rich para nomes com mais de 10 caracteres! \n')
+        limite_caracteres = int(10)
+
     grupos = dict()
     for i in range(qtde_grupos):
-        nome = str(input(f'Nome do {i + 1}º grupo: '))
+        while True:
+            nome = str(input(f'Nome do {i + 1}º grupo: '))
+            if len(nome) <= limite_caracteres:
+                break
+        
         qtde = int(input('Quantidade de elementos desse grupo: '))
         grupos[nome] = qtde
 
@@ -42,7 +53,6 @@ def definirGrupos(qtde_grupos):
         percentual = (value / populacao) * 100
         grupos[key] = {'qtde': value, 'percentual': round(percentual, 2)}
     return grupos
-
 
 def inserindoValor(qtde_amostra, populacao):
     amostras = list()
@@ -81,23 +91,39 @@ def coletarAmostra(qtde_grupos, tamanho_amostra):
 
     return grupos
 
+def criarTabela(grupos):
+    print(f'{"AMOSTRAGEM PORPORCIONAL ESTRATIFICADA":^43}')
+    print(f'{" Grupo":^10}', end=' ')
+    print(f'{"População":^10}', end=' ')
+    print(f'{"Percentual":^10}', end=' ')
+    print(f'{"Amostra":^10}')
+
+    for key, dict_interno in grupos.items():
+        print(f'{key:^10}', end='')
+        for key in dict_interno.keys():
+            print(f'{dict_interno[key]:^10}', end=' ')
+        print()
 
 def mostrarTabela(grupos):
-    from rich.table import Table
-    from rich.console import Console
+    try:
+        from rich.table import Table
+        from rich.console import Console
 
-    console = Console()
-    tabela = Table(title='AMOSTRAGEM PROPORCIONAL ESTRATIFICADA')
-    tabela.add_column('Grupo')
-    tabela.add_column('População')
-    tabela.add_column('Percentual')
-    tabela.add_column('Amostra')
+        console = Console()
+        tabela = Table(title='AMOSTRAGEM PROPORCIONAL ESTRATIFICADA')
+        tabela.add_column('Grupo')
+        tabela.add_column('População')
+        tabela.add_column('Percentual')
+        tabela.add_column('Amostra')
 
-    for nome_grupo, valores in grupos.items():
-        tabela.add_row(nome_grupo, str(valores['qtde']), str(
-            valores['percentual']), str(valores['qtde_amostra']))
+        for nome_grupo, valores in grupos.items():
+            tabela.add_row(nome_grupo, str(valores['qtde']), str(
+                valores['percentual']), str(valores['qtde_amostra']))
 
-    tabela.add_row('TOTAL', str(somarValores('qtde', grupos)), str(round(somarValores('percentual', grupos), 2)),
-                   str(somarValores('qtde_amostra', grupos)))
+        tabela.add_row('TOTAL', str(somarValores('qtde', grupos)), str(round(somarValores('percentual', grupos), 2)),
+                    str(somarValores('qtde_amostra', grupos)))
 
-    console.print(tabela)
+        console.print(tabela)
+    except ModuleNotFoundError:
+        print('Biblioteca rich não instalada!')
+        criarTabela(grupos)

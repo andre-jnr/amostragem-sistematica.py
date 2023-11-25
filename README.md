@@ -24,3 +24,5 @@ A amostragem proporcional estratificada é um método de amostragem probabilíst
 
 - `Python 3.10` ou superior.
 - Instalar a biblioteca `rich` (para visualização de tabelas).
+  - Adicionado uma alternava para visualização de dados sem tabela.
+    > Ainda recomendo que instale a biblioteca `rich`
